@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>her</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: linear-gradient(to bottom, #ffe4ec, #ffffff, #ffe4ec);
+      color:#333;
+      overflow-x:hidden;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,0.7);
+      border-bottom:1px solid #ffc0cb;
+    }
+
+    .nav{
+      max-width:1200px;
+      margin:auto;
+      padding:15px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:2rem;
+      font-weight:900;
+      color:#ff4d88;
+    }
+
+    .badge{
+      background:#ff4d88;
+      color:white;
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:bold;
+      box-shadow:0 5px 15px rgba(255,77,136,0.3);
+    }
+
+  
+    .hero{
+      text-align:center;
+      padding:100px 20px 60px;
+    }
+
+    .hero h1{
+      font-size:4rem;
+      line-height:1.1;
+      font-weight:900;
+    }
+
+    .hero h1 span{
+      color:#ff4d88;
+      display:block;
+    }
+
+    .hero p{
+      margin-top:25px;
+      font-size:1.2rem;
+      color:#666;
+    }
+
+    .hero button{
+      margin-top:35px;
+      border:none;
+      background:#ff4d88;
+      color:white;
+      padding:18px 35px;
+      border-radius:999px;
+      font-size:1rem;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(255,77,136,0.3);
+    }
+
+    .hero button:hover{
+      transform:scale(1.05);
+    }
+
+    /* tinitingin tingin mo dito */
+
+    .gallery{
+      column-count:3;
+      column-gap:18px;
+      max-width:1200px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .card{
+      break-inside:avoid;
+      margin-bottom:18px;
+      overflow:hidden;
+      border-radius:28px;
+      position:relative;
+      background:white;
+      box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .card img{
+      width:100%;
+      display:block;
+      transition:0.5s;
+    }
+
+    .card:hover img{
+      transform:scale(1.08);
+    }
+
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      opacity:0;
+      transition:0.3s;
+      display:flex;
+      align-items:flex-end;
+      padding:20px;
+    }
+
+    .card:hover .overlay{
+      opacity:1;
+    }
+
+    .overlay p{
+      color:white;
+      font-size:1.1rem;
+      font-weight:bold;
+    }
+
+    .notes{
+      max-width:1100px;
+      margin:50px auto;
+      padding:20px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .note{
+      background:rgba(255,255,255,0.8);
+      padding:30px;
+      border-radius:28px;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .note:hover{
+      transform:translateY(-8px);
+    }
+
+    .note .emoji{
+      font-size:3rem;
+      margin-bottom:15px;
+    }
+
+    .note p{
+      font-size:1.1rem;
+      line-height:1.6;
+    }
+
+    /* crush po kita haha */
+    footer{
+      border-top:1px solid #ffc0cb;
+      background:rgba(255,255,255,0.7);
+      padding:30px 20px;
+      text-align:center;
+      color:#666;
+    }
+
+    footer .icons{
+      margin-top:10px;
+      font-size:1.5rem;
+    }
+
+    @media(max-width:900px){
+      .gallery{
+        column-count:2;
+      }
+
+      .notes{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:3rem;
+      }
+    }
+
+    @media(max-width:600px){
+      .gallery{
+        column-count:1;
+      }
+
+      .hero h1{
+        font-size:2.3rem;
+      }
+
+      .badge{
+        display:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="logo">her</div>
+      <div class="badge">pinterest</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>
+      a whole website because
+      <span>you’re that pretty.</span>
+    </h1>
+
+    <p>
+      not gonna lie, this page exists because somebody can’t stop thinking about you. (ako yon)
+    </p>
+
+    <button onclick="scrollToGallery()">
+      scroll for more ✨
+    </button>
+  </section>
+
+<section class="gallery" id="gallery">
+
+  <div class="card">
+    <img src="images/ganda.jfif">
+    <div class="overlay">
+      <p>holy face card >>></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/ahaha.jfif">
+    <div class="overlay">
+      <p>ganda hahaah</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/cute.jfif">
+    <div class="overlay">
+      <p>hii po crushh</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/what.jfif">
+    <div class="overlay">
+      <p>pretty</p>
+    </div>
+  </div>
+
+    <div class="card">
+    <img src="images/she.jfif">
+    <div class="overlay">
+      <p>pwede na sa ms. universe? </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/is.jfif">
+    <div class="overlay">
+      <p>accidentally my favorite person</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/soo.jfif">
+    <div class="overlay">
+      <p>how are you even real 😭</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/hella.jfif">
+    <div class="overlay">
+      <p>this belongs on pinterest</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="images/holy.jfif">
+    <div class="overlay">
+      <p>my camera roll favorite</p>
+    </div>
+  </div>
+
+
+</section>
+
+  <section class="notes">
+
+    <div class="note">
+      <div class="emoji">💌</div>
+      <p>ganda bwisit</p>
+    </div>
+
+    <div class="note">
+      <div class="emoji">🎀</div>
+      <p>hi cruzsh</p>
+    </div>
+
+    <div class="note">
+      <div class="emoji">✨</div>
+      <p>umagang kay ganda talaga</p>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>
+      maganda talaga yung umaga at gabi ko neto
+    </p>
+
+    <div class="icons">
+      🌷 🎀 ✨
+    </div>
+  </footer>
+
+  <script>
+    function scrollToGallery(){
+      document.getElementById("gallery").scrollIntoView({
+        behavior:"smooth"
+      });
+    }
+  </script>
+
+</body>
+</html>
